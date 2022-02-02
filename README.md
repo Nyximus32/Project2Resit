@@ -1,5 +1,4 @@
 # Project2Resit
-resit
 Project 2 resit, Period 3, Year 1
 
 System info
