@@ -1,11 +1,12 @@
 *{
     margin:0;
     padding: 0;
+    box-sizing: border-box;
 }
 .navigation-bar{
     width: 100%;
     height: 70px;
-    background-color: #4C4D4E;
+    background-color: #005AA7;
 }
 .logo{
     width: 200px;
@@ -15,7 +16,7 @@
     width: 87px;
 }
 .search-area{
-    width: 600px;
+    width: 550px;
     height: 70px;
     float: left;
     margin-left: 50px;
@@ -29,4 +30,82 @@
 .search_button{
     float: left;
     margin-top: 10px;
+    padding: 10px 10px;
+    border-radius: 2px;
+    background-color: #8CD50B;
 }
+.user-menu{
+    text-align: center;
+}
+.user-menu ul{
+    display: inline-flex;
+    list-style: none;
+    color: red;
+}
+.user-menu ul li{
+    width: 125px;
+    height: 70px;
+    line-height: 70px;
+}
+.user-menu ul li a{
+    text-decoration: none;
+    color: white;
+}
+.user-menu ul li:hover{
+    background: red;
+    border-radius: 3px;
+}
+.user-menu .fa{
+    margin-right: 8px;
+}
+.dropdown-menu{
+    display: none;
+    
+}
+.user-menu ul li:hover .dropdown-menu{
+    display: block;
+    position: absolute;
+    background: #005AA7 ;  
+}
+.user-menu ul li:hover .dropdown-menu ul{
+    display: block;
+    margin: 2px;
+
+}
+/* .user-menu ul li:hover .dropdown-menu ul li{
+   
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: center;
+}
+
+
+.user-menu{
+    width: 300px;
+    height: 60px;
+    float: right;
+}
+.user-menu ul{
+    float: right;
+}
+.user-menu ul li{
+    list-style: none;
+    float: left;
+    width: 125px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+}
+.user-menu li:hover{
+    background-color: #E52329;
+}
+.user-menu ul li a{
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+.dropdown-menu{
+    display: none;
+    
+}*/
