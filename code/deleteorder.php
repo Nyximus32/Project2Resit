@@ -9,6 +9,7 @@
 <body>
     <?php
         $orderID = $_GET['id'];
+        $conn = mysqli_connect("127.0.0.1", "root", "",);
         if(!$conn)
         {
             die("There was an error connecting to the database. Error: " . mysqli_connect_errno());
@@ -17,9 +18,10 @@
         if(mysqli_select_db($conn, "webshop"))
         {
             $sql = "DELETE FROM orders WHERE order_ID=?";
-            mysqli_stmt_bind_param($stmt, "s", $orderID);
             if($stmt = mysqli_prepare($conn, $sql))
             {	
+                mysqli_stmt_bind_param($stmt, "s", $orderID);
+                
                 if(!mysqli_stmt_execute($stmt)){
                     echo"error smth";                
                 }

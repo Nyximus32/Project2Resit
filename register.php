@@ -82,7 +82,7 @@ $conn = mysqli_connect("127.0.0.1", "root", "");
                     $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
                     if(mysqli_stmt_execute($stmt)){
                       // Redirect to login page
-                      header("location: code/homepage.php");
+                      header("location: login.php");
                   } else{
                       echo "Oops! Something went wrong. Please try again later.";
                   }

@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is already logged in
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: #");
+    header("location: code/homepage.php");
     exit;
 }
 
@@ -41,7 +41,7 @@ $conn = mysqli_connect("127.0.0.1", "root", "");
                     // Validate credentials
                     if(empty($username_err) && empty($password_err)){
                         // Prepare a select statement
-                        $sql = "SELECT cust_ID, `Name`, password FROM customer WHERE `Name` = ?";
+                        $sql = "SELECT cust_ID, `Name`, `Age`, userType, password FROM customer WHERE `Name` = ?";
                         
                         if($stmt = mysqli_prepare($conn, $sql)){
                             mysqli_stmt_bind_param($stmt, "s", $param_username);
@@ -56,7 +56,7 @@ $conn = mysqli_connect("127.0.0.1", "root", "");
                                 // Check if username exists, if yes then verify password
                                 if(mysqli_stmt_num_rows($stmt) == 1){                    
                                     // Bind result variables
-                                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
+                                    mysqli_stmt_bind_result($stmt, $id, $username,$age,$userType,$hashed_password);
                                     if(mysqli_stmt_fetch($stmt)){
                                         if(password_verify($password, $hashed_password)){
                                             // Password is correct, so start a new session
@@ -65,7 +65,15 @@ $conn = mysqli_connect("127.0.0.1", "root", "");
                                             // Store data in variables
                                             $_SESSION["loggedin"] = true;
                                             $_SESSION["id"] = $id;
-                                            $_SESSION["username"] = $username;                            
+                                            $_SESSION["username"] = $username;
+                                            if($age>=18){
+                                                $_SESSION["isAdult"] = true;
+                                            }
+                                            else{
+                                                $_SESSION["isAdult"] = false;
+                                            }
+                                            
+                                            $_SESSION["userType"] = $userType;
                                             
                                             // Redirect user
                                             header("location: code/homepage.php");

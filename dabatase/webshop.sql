@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2022 at 02:09 PM
+-- Generation Time: Mar 03, 2022 at 09:51 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -62,7 +62,8 @@ CREATE TABLE `item` (
   `title` varchar(255) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
   `category` varchar(255) DEFAULT NULL,
-  `price` double DEFAULT NULL
+  `price` double DEFAULT NULL,
+  `isAgeRestricted` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -111,7 +112,9 @@ ALTER TABLE `orders`
   ADD KEY `item_ID` (`item_ID`);
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT for dumped tables
+--
+
 --
 -- AUTO_INCREMENT for table `customer`
 --
@@ -135,6 +138,10 @@ ALTER TABLE `item`
 --
 ALTER TABLE `orders`
   MODIFY `order_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
 
 --
 -- Constraints for table `discount`
