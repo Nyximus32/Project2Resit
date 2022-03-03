@@ -31,13 +31,14 @@
                 <div class="user-menu">
                     <ul>
                         <li class="active">
-                            <a href="#"><i class="fas fa-user"></i>My account</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="drop-down" aria-hoshpopup="true" aria-expanded="false"><i class="fas fa-user"></i>My account</a>
                             <!-- dropdown box -->
                             <div class="dropdown-menu"> <!-- dropdown-menu-right bg-dark" -->
                                 <ul>
-                                    <li><a href="#">Sign in</a></li>
-                                    <li><a href="#">Order</a></li>
-                                    <li><a href="#">Cart</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-user"></i> &nbsp; Sign in</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-cube"></i> &nbsp;Order</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i> &nbsp;Cart</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-user-plus"></i> &nbsp;Register</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -46,11 +47,58 @@
                 </div>
             </div>
         </div>
+        <!-- slider area -->
+        <div class="slider-area">
+            <div class="slider">
+                <div>
+                    <a href="#">
+                        <img src="images/slider-1.jpg">
+                    </a>
+                    <!-- slider content -->
+                    <div class="slider-content">
+                        <h3 class="text-white text-capitalize">
+                            Ipsum dolore dolor consetetur dolor amet voluptua. Et ipsum sit ipsum sed rebum amet kasd. Sit stet labore diam ipsum.
+                        </h3>
+                        <a href="#"><button class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i> &nbsp; Buy Now</button></a>
+                        <a href="#"><button class="btn btn-outline-danger ml-5">Read More</button></a>
+                    </div>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="images/slider-2.jpg">
+                    </a>
+                    <!-- slider content -->
+                    <div class="slider-content">
+                        <h3 class="text-white text-capitalize">
+                            Ipsum dolore dolor consetetur dolor amet voluptua. Et ipsum sit ipsum sed rebum amet kasd. Sit stet labore diam ipsum.
+                        </h3>
+                        <a href="#"><button class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i> &nbsp; Buy Now</button></a>
+                        <a href="#"><button class="btn btn-outline-danger ml-5">Read More</button></a>
+                    </div>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="images/slider-3.jpg">
+                    </a>
+                    <!-- slider content -->
+                    <div class="slider-content">
+                        <h3 class="text-white text-capitalize">
+                            Ipsum dolore dolor consetetur dolor amet voluptua. Et ipsum sit ipsum sed rebum amet kasd. Sit stet labore diam ipsum.
+                        </h3>
+                        <a href="#"><button class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i> &nbsp; Buy Now</button></a>
+                        <a href="#"><button class="btn btn-outline-danger ml-5">Read More</button></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
     
 
 <i class="fas font"></i>
+<!-- jquery file -->
 <script src="js/jquery.js"></script>
+<!-- jquery minified js file -->
 <script src="js/jquery.bxslider.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
