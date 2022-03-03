@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is already logged in
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: code/homepage.php");
+    header("location: homepage.php");
     exit;
 }
 
@@ -76,7 +76,7 @@ $conn = mysqli_connect("127.0.0.1", "root", "");
                                             $_SESSION["userType"] = $userType;
                                             
                                             // Redirect user
-                                            header("location: code/homepage.php");
+                                            header("location: homepage.php");
                                         } else{
                                             // If password is not valid
                                             $login_err = "Invalid username or password.";

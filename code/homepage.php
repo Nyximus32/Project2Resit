@@ -40,12 +40,12 @@
                         if(!$isAgeRestricted){
 
                             if($id==$discID && $startDate<= $currentDate && $endDate>= $currentDate){
-                            echo"<h2>". $title."</h2>" ;
+                            echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
                             echo"price = ". $price*$discount." euro <br>" ;
                             echo "<img src='images/".$title.".jpg' ><br>";
                             }
                             else{
-                            echo"<h2>". $title."</h2>" ;
+                            echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
                             echo"price = ". $price." euro <br>" ;
                             echo "<img src='images/".$title.".jpg' ><br>"; 
                             echo "<a href="."adddiscount.php?id=".$id.">Discount</a> <br><br>";
@@ -53,20 +53,20 @@
                         }
                         else{
                             if($userType=="admin"){
-                                echo"<h2>". $title."</h2>" ;
+                                echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
                                 echo"price = ". $price." euro <br>" ;
                                 echo "<img src='images/".$title.".jpg' ><br>"; 
                                 echo "<a href="."adddiscount.php?id=".$id.">Discount</a> <br><br>";
                             }
                             else{
                                 if($isAdult){
-                                    echo"<h2>". $title."</h2>" ;
+                                    echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
                                     echo"price = ". $price." euro <br>" ;
                                     echo "<img src='images/".$title.".jpg' ><br>"; 
                                 }
                                 else{
                                     if($isAgeRestricted){
-                                        echo"<h2>". $title."</h2>" ;
+                                        echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
                                         echo"price = ". $price." euro <br>" ;
                                         echo "<img src='images/".$title.".jpg' ><br>"; 
                                     }
