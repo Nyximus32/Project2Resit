@@ -92,18 +92,162 @@
 
             </div>
         </div>
+
+        <!-- this is for work area -->
+        <div class="container-fluid">
+            <!-- product section -->
+            <section class="product-section">
+                <div class="section-heading">
+                    <h3 class="heading">
+                        Latest Product
+                    </h3>
+                </div>
+                    <div class="section-product-cards">
+                    <div class="owl-carousel">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/product-images/image1.jpg" alt="product name">
+                        </div>
+                        <!-- product hovered contents -->
+                        <div class="card-contents">
+                            <button type="button" class="btn btn-warning cart-btn">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                        <div class="product-datails">
+                            <!-- product name -->
+                            <h5 class="product-name">
+                                Lenovo ThinkPad E14 Ryzen-5 4500U 14" Laptop
+                            </h5>
+                            <p class="product-price">
+                                <small class="text-danger"><s> € 629 , -</s></small>
+                                <span class="text-success">€500, - </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/product-images/image-1.jpeg" alt="product name">
+                        </div>
+                        <!-- product hovered contents -->
+                        <div class="card-contents">
+                            <button type="button" class="btn btn-warning cart-btn">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                        <div class="product-datails">
+                            <!-- product name -->
+                            <h5 class="product-name">
+                                MSI GF63 Thin Core i5 10th Gen - (8 GB/1 TB HDD/Windows 10 Home/4 GB Graphics/NVIDIA GeForce GTX 1650 Max Q/60 Hz) GF63 Thin 10SCXR-1618IN / GF63 Thin 10SC-612IN Gaming Laptop  (15.6 inch, Black, 1.86 KG)
+                            </h5>
+                            <p class="product-price">
+                                <small class="text-danger"><s> € 629 , -</s></small>
+                                <span class="text-success">€500, - </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/product-images/laptop-3.jpeg" alt="product name">
+                        </div>
+                        <!-- product hovered contents -->
+                        <div class="card-contents">
+                            <button type="button" class="btn btn-warning cart-btn">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                        <div class="product-datails">
+                            <!-- product name -->
+                            <h5 class="product-name">
+                                DELL Inspiron Core i3 11th Gen - (8 GB/1 TB HDD/256 GB SSD/Windows 11 Home) Inspiron 3511 Thin and Light Laptop  (15.6 Inch, Carbon Black, 1.8 Kgs, With MS Office)
+                            </h5>
+                            <p class="product-price">
+                                <small class="text-danger"><s> € 629 , -</s></small>
+                                <span class="text-success">€500, - </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/product-images/laptop-3.jpeg" alt="product name">
+                        </div>
+                        <!-- product hovered contents -->
+                        <div class="card-contents">
+                            <button type="button" class="btn btn-warning cart-btn">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                        <div class="product-datails">
+                            <!-- product name -->
+                            <h5 class="product-name">
+                                DELL Inspiron Core i3 11th Gen - (8 GB/1 TB HDD/256 GB SSD/Windows 11 Home) Inspiron 3511 Thin and Light Laptop  (15.6 Inch, Carbon Black, 1.8 Kgs, With MS Office)
+                            </h5>
+                            <p class="product-price">
+                                <small class="text-danger"><s> € 629 , -</s></small>
+                                <span class="text-success">€500, - </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/product-images/laptop-3.jpeg" alt="product name">
+                        </div>
+                        <!-- product hovered contents -->
+                        <div class="card-contents">
+                            <button type="button" class="btn btn-warning cart-btn">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                        <div class="product-datails">
+                            <!-- product name -->
+                            <h5 class="product-name">
+                                DELL Inspiron Core i3 11th Gen - (8 GB/1 TB HDD/256 GB SSD/Windows 11 Home) Inspiron 3511 Thin and Light Laptop  (15.6 Inch, Carbon Black, 1.8 Kgs, With MS Office)
+                            </h5>
+                            <p class="product-price">
+                                <small class="text-danger"><s> € 629 , -</s></small>
+                                <span class="text-success">€500, - </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/product-images/laptop-3.jpeg" alt="product name">
+                        </div>
+                        <!-- product hovered contents -->
+                        <div class="card-contents">
+                            <button type="button" class="btn btn-warning cart-btn">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                        <div class="product-datails">
+                            <!-- product name -->
+                            <h5 class="product-name">
+                                DELL Inspiron Core i3 11th Gen - (8 GB/1 TB HDD/256 GB SSD/Windows 11 Home) Inspiron 3511 Thin and Light Laptop  (15.6 Inch, Carbon Black, 1.8 Kgs, With MS Office)
+                            </h5>
+                            <p class="product-price">
+                                <small class="text-danger"><s> € 629 , -</s></small>
+                                <span class="text-success">€500, - </span>
+                            </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </section>
+            
+
+        </div>
     </div>
     
 
-<i class="fas font"></i>
-<!-- jquery file -->
-<script src="js/jquery.js"></script>
-<!-- jquery minified js file -->
-<script src="js/jquery.bxslider.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="font/fontawesome-free-6.0.0-web/js/all.js"></script>
-<script src="js/main.js"></script>
+    <i class="fas font"></i>
+    <!-- jquery file -->
+    <script src="js/jquery.js"></script>
+    <!-- jquery minified js file -->
+    <script src="js/jquery.bxslider.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="font/fontawesome-free-6.0.0-web/js/all.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
