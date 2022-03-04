@@ -3,7 +3,7 @@ header{
     height: 50px;
     line-height: 50px;
     background-color: aquamarine;
-    background: #c72c41;
+    background: lightskyblue;
 }
 .close-btn{
     cursor: pointer;
@@ -65,4 +65,11 @@ header{
 }
 .bg-orange-g{
     background: linear-gradient(to right, #ff6600, #de3a3a);
+}
+
+h1{
+    text-align: center;
+}
+.eveything{
+    text-align: center;
 }

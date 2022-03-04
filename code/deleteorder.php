@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+
+    <?php include './header.php' ?>
+
     <?php
         $orderID = $_GET['id'];
         $conn = mysqli_connect("127.0.0.1", "root", "",);

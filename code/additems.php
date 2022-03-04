@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="admin/css/svg-with-js.css">
+        <link rel="stylesheet" href="admin/css/bootstrap.min.css">
+        <link rel="stylesheet" href="admin/css/admin_panel.css">
     <title>Add items</title>
 </head>
 <body>
-
+    <?php include './header.php' ?>
     <h1>Add a new item</h1>
     <form action="<?= htmlentities($_SERVER['PHP_SELF']);?>" method="post" enctype="multipart/form-data" >
 
@@ -33,7 +36,8 @@
     <input type="radio" name="isAgeRestricted" value="true" /> Yes <br>
     <input type="radio" name="isAgeRestricted" value="false" /> No
 
-    <h3>Add image for the product<br>(Only images with the ".jpg" extention are allowed )</h3>
+    <h3>Add image for the product</h3>
+    <h6>Only images with the ".jpg" extention are allowed <br> Images must have the same name as title of the image that your are adding</h6><br>
     <input type="file" name="uploadedFile" id="file"/>  <br><br>
     <input type="submit" value="submit" name="submit">
     </form>

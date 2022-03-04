@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="admin/css/svg-with-js.css">
+        <link rel="stylesheet" href="admin/css/bootstrap.min.css">
+        <link rel="stylesheet" href="admin/css/admin_panel.css">
     <title>Details</title>
 </head>
 <body>
+
+    <?php include './header.php' ?>
+
     <?php
     $itemID= $_GET['id'];
 
@@ -38,7 +44,7 @@
                         echo"<h2>". $title."</h2>" ;
                         echo"<h3>". $description."</h3>";
                         echo"<h3>price: ". $price." euro <h3><br>" ;
-                        echo "<img src='images/".$title.".jpg' ><br>";
+                        echo "<img src='images/".$title.".jpg' style='width:300px;height:400px;'><br><br>";
 
                         echo '<form action="#" method="post">
                               <input type="submit" name="add" value="Add item to cart"/>

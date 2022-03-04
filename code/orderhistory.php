@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order History</title>
-</head>
-<body>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Webshop</title>
+        <link rel="stylesheet" href="admin/css/svg-with-js.css">
+        <link rel="stylesheet" href="admin/css/bootstrap.min.css">
+        <link rel="stylesheet" href="admin/css/admin_panel.css">
+    </head>
+    <body>
+
+    <?php include './header.php' ?>
     <?php
-        session_start();
-        $currentID=$_SESSION["id"];
-        $userType=$_SESSION["userType"];
+
+        if(!isset($_SESSION["loggedin"])){
+            header("location: homepage.php");
+        }
+        else{
+            $currentID=$_SESSION["id"];
+            $userType=$_SESSION["userType"];
+        }
+        
+        
         $conn = mysqli_connect("127.0.0.1", "root", "",);
 
         if(!$conn)
@@ -30,7 +40,7 @@
                 mysqli_stmt_bind_result($stmt,$custID,$orderID,$title,$price,$quantity,$status);
                 mysqli_stmt_store_result($stmt);
 
-                echo "<h1>MY order history</h1>";
+                echo "<h1>My order history</h1>";
 
                 if(mysqli_stmt_num_rows($stmt) != 0)
                 {
@@ -49,6 +59,9 @@
                             echo"quantity = ". $quantity."<br>" ;
                             echo"status = ". $status."<br>" ;
                             echo "<a href="."editorder.php?id=".$orderID.">Edit/Delete order</a> <br><br>";
+                        }
+                        else{
+                            echo"<br><h3>You don't have any orders currently<h3>";
                         }
                     }
                 }else{

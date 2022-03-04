@@ -3,13 +3,21 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Webshop</title>
+        <link rel="stylesheet" href="admin/css/svg-with-js.css">
+        <link rel="stylesheet" href="admin/css/bootstrap.min.css">
+        <link rel="stylesheet" href="admin/css/admin_panel.css">
     </head>
     <body>
 
+    <?php include './header.php' ?>
+
     <?php
-        session_start();
-        $isAdult = $_SESSION["isAdult"];
-        $userType = $_SESSION["userType"];
+        if(isset($_SESSION["loggedin"])){
+            $isAdult = $_SESSION["isAdult"];
+            $userType = $_SESSION["userType"];
+        }
+        $userType="user";
+        
         $currentDate = date('Y-m-d');
 
         $conn = mysqli_connect("127.0.0.1", "root", "",);
@@ -31,44 +39,66 @@
                 mysqli_stmt_bind_result($stmt,$id,$title,$price,$isAgeRestricted,$discID,$startDate,$endDate,$discount);
                 mysqli_stmt_store_result($stmt);
 
-                echo "<h1>Items...</h1>";
+                echo "<h1>All available items</h1>";
 
                 if(mysqli_stmt_num_rows($stmt) != 0)
                 {
                     while (mysqli_stmt_fetch($stmt)) 
                     {
-                        if(!$isAgeRestricted){
+                        if($userType=="admin"){
 
                             if($id==$discID && $startDate<= $currentDate && $endDate>= $currentDate){
-                            echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
-                            echo"price = ". $price*$discount." euro <br>" ;
-                            echo "<img src='images/".$title.".jpg' ><br>";
+                                echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
+                                echo "<img src='images/".$title.".jpg' style='width:300px;height:400px;'><br>";
+                                echo"price: ". $price*$discount." euro <br><br>" ;
                             }
                             else{
-                            echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
-                            echo"price = ". $price." euro <br>" ;
-                            echo "<img src='images/".$title.".jpg' ><br>"; 
-                            echo "<a href="."adddiscount.php?id=".$id.">Discount</a> <br><br>";
+                                echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
+                                echo "<img src='images/".$title.".jpg' style='width:300px;height:400px;'><br>";
+                                echo"price: ". $price." euro <br><br>" ;
+                                echo "<a href="."adddiscount.php?id=".$id.">Discount</a> <br><br>";
                             }
                         }
                         else{
-                            if($userType=="admin"){
-                                echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
-                                echo"price = ". $price." euro <br>" ;
-                                echo "<img src='images/".$title.".jpg' ><br>"; 
-                                echo "<a href="."adddiscount.php?id=".$id.">Discount</a> <br><br>";
+                            if(!$isAgeRestricted){
+
+                                if($id==$discID && $startDate<= $currentDate && $endDate>= $currentDate){
+                                    echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
+                                    echo "<img src='images/".$title.".jpg' style='width:300px;height:400px;'><br>";
+                                    echo"price: ". $price*$discount." euro <br><br>" ;
+                                }
+                                else{
+                                    echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
+                                    echo "<img src='images/".$title.".jpg' style='width:300px;height:400px;'><br>";
+                                    echo"price: ". $price." euro <br><br>" ;
+                                }
                             }
                             else{
                                 if($isAdult){
-                                    echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
-                                    echo"price = ". $price." euro <br>" ;
-                                    echo "<img src='images/".$title.".jpg' ><br>"; 
+
+                                    if($id==$discID && $startDate<= $currentDate && $endDate>= $currentDate){
+                                        echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
+                                        echo "<img src='images/".$title.".jpg' style='width:300px;height:400px;'><br>";
+                                        echo"price: ". $price*$discount." euro <br><br>" ;
+                                    }
+                                    else{
+                                        echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
+                                        echo "<img src='images/".$title.".jpg' style='width:300px;height:400px;'><br>";
+                                        echo"price: ". $price." euro <br><br>" ;
+                                    }
                                 }
                                 else{
                                     if($isAgeRestricted){
-                                        echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
-                                        echo"price = ". $price." euro <br>" ;
-                                        echo "<img src='images/".$title.".jpg' ><br>"; 
+                                        if($id==$discID && $startDate<= $currentDate && $endDate>= $currentDate){
+                                            echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
+                                            echo "<img src='images/".$title.".jpg' style='width:300px;height:400px;'><br>";
+                                            echo"price: ". $price*$discount." euro <br><br>" ;
+                                        }
+                                        else{
+                                            echo"<h2> <a href="."iteminfo.php?id=".$id.">".$title."</a> </h2>" ;
+                                            echo "<img src='images/".$title.".jpg' style='width:300px;height:400px;'><br>";
+                                            echo"price: ". $price." euro <br><br>" ;
+                                        }
                                     }
                                 }
                             }
