@@ -10,15 +10,30 @@
 
     <h1>Add a new item</h1>
     <form action="<?= htmlentities($_SERVER['PHP_SELF']);?>" method="post" enctype="multipart/form-data" >
-    Title <br>
-    <input type="text" class="title" name="title"> <br><br>
-    Description <br>
-    <input type="text" class="description" name="description">  <br><br>
-    Category <br>
-    <input type="text" class="category" name="category">  <br><br>
-    Price <br>
-    <input type="text" class="price" name="price">  <br><br>
-    Item image <br>
+
+    <h3>Title</h3>
+    <input type="text" class="title" name="title">
+
+    <h3>Description</h3>
+    <input type="text" class="description" name="description">
+
+    <h3>Category</h3>
+    <select name="category">
+                <option value="nothing"></option>
+                <option value="tech">Tech</option>
+                <option value="home">Home</option>
+                <option value="cooking">Cooking</option>
+                <option value="other">Other</option>
+            </select>
+
+    <h3>Price</h3>
+    <input type="text" class="price" name="price">
+
+    <h3>Is the item age restricted</h3>
+    <input type="radio" name="isAgeRestricted" value="true" /> Yes <br>
+    <input type="radio" name="isAgeRestricted" value="false" /> No
+
+    <h3>Add image for the product<br>(Only images with the ".jpg" extention are allowed )</h3>
     <input type="file" name="uploadedFile" id="file"/>  <br><br>
     <input type="submit" value="submit" name="submit">
     </form>
@@ -31,12 +46,14 @@
         if (!empty($_POST["title"]) &&
             !empty($_POST["description"]) &&
             !empty($_POST["category"]) &&
-            !empty($_POST["price"]) ) {
+            !empty($_POST["price"]) &&
+            !empty($_POST["isAgeRestricted"]) ) {
             
             $title= $_POST["title"];
             $description = $_POST["description"];
             $category = $_POST["category"];
             $price = $_POST["price"];
+            $isAgeRestricted = $_POST["isAgeRestricted"];
 
             $conn = mysqli_connect("127.0.0.1", "root", "");
             if(!$conn)
@@ -47,11 +64,11 @@
 
             if(mysqli_select_db($conn, "webshop"))
 			{
-                $sql="  INSERT INTO item (title,description,category,price)
-                        VALUES (?,?,?,?)";
+                $sql="  INSERT INTO item (title,description,category,price,isAgeRestricted)
+                        VALUES (?,?,?,?,?)";
 
                 if($stmt = mysqli_prepare($conn, $sql)){
-                    mysqli_stmt_bind_param($stmt,"ssss",$title, $description, $category, $price);
+                    mysqli_stmt_bind_param($stmt,"sssss",$title, $description, $category, $price, $isAgeRestricted);
 
                     if(!mysqli_stmt_execute($stmt)){
                         echo"error smth";
@@ -62,7 +79,7 @@
 
                         if($_FILES["uploadedFile"]["size"]< 30000000){
 
-                        $acceptedTypes = ["image/jpg"/*, "image/jpeg", "image/png"*/];
+                        $acceptedTypes = ["image/jpg", "image/jpeg", "image/png"];
                             $fileInfo = finfo_open(FILEINFO_MIME_TYPE);
                             $FileType = finfo_file($fileInfo, $_FILES["uploadedFile"]["tmp_name"]);
                     
@@ -91,7 +108,6 @@
                         else{
                             echo"Too big";
                         }
-                        header("location:./homepage.php");
                     }
                 }
                 else{

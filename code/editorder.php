@@ -39,10 +39,15 @@
             {
                 echo'
                 <form action="#" method="post">
-                Current Status <br>
-                <input type="text" name="preChange" value='.$status.'>  <br><br>
+                Current Status: '.$status.'
+                <br><br>
                 Change status to: <br>
-                <input type="text" class="change" name="change"> <br>
+                <select name="change">
+                <option value="nothing"></option>
+                <option value="preparing">Preparing</option>
+                <option value="shipping">Shipping</option>
+                <option value="delivered">Delivered</option>
+                </select><br><br>
                 <input type="submit" name="edit" value="Edit Status"/> <br><br>
                 <input type="submit" name="delete" value="Delete Order"/>
                 </form>';

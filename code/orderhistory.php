@@ -7,9 +7,10 @@
     <title>Order History</title>
 </head>
 <body>
-    <?php 
-        $currentID=1;
-        $userType="admin";
+    <?php
+        session_start();
+        $currentID=$_SESSION["id"];
+        $userType=$_SESSION["userType"];
         $conn = mysqli_connect("127.0.0.1", "root", "",);
 
         if(!$conn)
@@ -40,6 +41,7 @@
                             echo"price = ". $price." euro <br>" ;
                             echo"quantity = ". $quantity."<br>" ;
                             echo"status = ". $status."<br>" ;
+                            echo "<a href="."deleteorder.php?id=".$orderID.">Cancel your order</a> <br><br>";
                         }
                         else if($userType=="admin"){
                             echo"title = ". $title."<br>" ;
